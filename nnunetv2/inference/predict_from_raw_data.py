@@ -27,7 +27,7 @@ from export_prediction import export_prediction_from_logits, \
     convert_predicted_logits_to_segmentation_with_correct_shape
 from sliding_window_prediction import compute_gaussian, \
     compute_steps_for_sliding_window
-from nnunetv2.utilities.file_path_utilities import get_output_folder, check_workers_alive_and_busy
+from file_path_utilities import get_output_folder, check_workers_alive_and_busy
 from nnunetv2.utilities.find_class_by_name import recursive_find_python_class
 from nnunetv2.utilities.helpers import empty_cache, dummy_context
 from nnunetv2.utilities.json_export import recursive_fix_for_json_export
