@@ -19,11 +19,11 @@ from tqdm import tqdm
 
 import nnunetv2
 from nnunetv2.configuration import default_num_processes
-from nnunetv2.inference.data_iterators import PreprocessAdapterFromNpy, preprocessing_iterator_fromfiles, \
+from data_iterators import PreprocessAdapterFromNpy, preprocessing_iterator_fromfiles, \
     preprocessing_iterator_fromnpy
-from nnunetv2.inference.export_prediction import export_prediction_from_logits, \
+from export_prediction import export_prediction_from_logits, \
     convert_predicted_logits_to_segmentation_with_correct_shape
-from nnunetv2.inference.sliding_window_prediction import compute_gaussian, \
+from sliding_window_prediction import compute_gaussian, \
     compute_steps_for_sliding_window
 from nnunetv2.utilities.file_path_utilities import get_output_folder, check_workers_alive_and_busy
 from nnunetv2.utilities.find_class_by_name import recursive_find_python_class
