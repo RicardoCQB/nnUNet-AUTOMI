@@ -150,6 +150,9 @@ class nnUNetTrainer(object):
         self.current_epoch = 0
         self.enable_deep_supervision = True
 
+        print(self.is_ddp)
+        print(self.enable_deep_supervision)
+
         ### Dealing with labels/regions
         self.label_manager = self.plans_manager.get_label_manager(dataset_json)
         # labels can either be a list of int (regular training) or a list of tuples of int (region-based training)
