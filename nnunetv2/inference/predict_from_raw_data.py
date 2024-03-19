@@ -97,7 +97,7 @@ class nnUNetPredictor(object):
         configuration_manager = plans_manager.get_configuration(configuration_name)
         # restore network
         num_input_channels = determine_num_input_channels(plans_manager, configuration_manager, dataset_json)
-        trainer_class = recursive_find_python_class(join(nnunetv2.__path__[0], "training", "nnUNetTrainer"),
+        trainer_class = recursive_find_python_class(join(__path__[0], "training", "nnUNetTrainer"),
                                                     trainer_name, 'nnunetv2.training.nnUNetTrainer')
 
         network = trainer_class.build_network_architecture(
