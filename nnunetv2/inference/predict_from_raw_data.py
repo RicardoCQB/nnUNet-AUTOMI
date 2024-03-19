@@ -19,7 +19,6 @@ from torch._dynamo import OptimizedModule
 from torch.nn.parallel import DistributedDataParallel
 from tqdm import tqdm
 
-import nnunetv2
 from configuration import default_num_processes
 from data_iterators import PreprocessAdapterFromNpy, preprocessing_iterator_fromfiles, \
     preprocessing_iterator_fromnpy
@@ -110,8 +109,8 @@ class nnUNetPredictor(object):
             enable_deep_supervision=True
         )
 
-        # network = medcam.inject(network, label=1, replace=True, backend="gcam", layer='seg_outputs.5')
-        # network.inference_apply_nonlin = lambda x: x
+        network = medcam.inject(network, label=1, replace=True, backend="gcam", layer='seg_outputs.5')
+        network.inference_apply_nonlin = lambda x: x
 
         self.plans_manager = plans_manager
         self.configuration_manager = configuration_manager
