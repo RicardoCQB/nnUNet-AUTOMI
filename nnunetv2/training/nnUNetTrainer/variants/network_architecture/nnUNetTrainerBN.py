@@ -12,7 +12,7 @@ class nnUNetTrainerBN(nnUNetTrainer):
                                    arch_init_kwargs_req_import: Union[List[str], Tuple[str, ...]],
                                    num_input_channels: int,
                                    num_output_channels: int,
-                                   enable_deep_supervision: bool = True) -> nn.Module:
+                                   enable_deep_supervision: bool = False) -> nn.Module:
 
         if 'norm_op' not in arch_init_kwargs.keys():
             raise RuntimeError("'norm_op' not found in arch_init_kwargs. This does not look like an architecture "
