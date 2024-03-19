@@ -106,7 +106,7 @@ class nnUNetPredictor(object):
             configuration_manager.network_arch_init_kwargs_req_import,
             num_input_channels,
             plans_manager.get_label_manager(dataset_json).num_segmentation_heads,
-            enable_deep_supervision=True
+            enable_deep_supervision=False
         )
 
         network = medcam.inject(network, label=1, replace=True, backend="gcam", layer='seg_outputs.5')
