@@ -32,6 +32,7 @@ from nnunetv2.utilities.json_export import recursive_fix_for_json_export
 from nnunetv2.utilities.label_handling.label_handling import determine_num_input_channels
 from nnunetv2.utilities.plans_handling.plans_handler import PlansManager, ConfigurationManager
 from nnunetv2.utilities.utils import create_lists_from_splitted_dataset_folder
+from medcam import medcam
 
 
 class nnUNetPredictor(object):
@@ -106,6 +107,9 @@ class nnUNetPredictor(object):
             plans_manager.get_label_manager(dataset_json).num_segmentation_heads,
             enable_deep_supervision=False
         )
+
+        network = medcam.inject(network, label=1, replace=True, backend="gcam", layer='seg_outputs.5')
+        network.inference_apply_nonlin = lambda x: x
 
         self.plans_manager = plans_manager
         self.configuration_manager = configuration_manager

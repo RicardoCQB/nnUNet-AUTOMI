@@ -123,6 +123,8 @@ def resample_and_save(predicted: Union[torch.Tensor, np.ndarray], target_shape: 
     if isinstance(dataset_json_dict_or_file, str):
         dataset_json_dict_or_file = load_json(dataset_json_dict_or_file)
 
+
+#TODO: multiply by 255 if we want to use the old way of saving segmentations
     # resample to original shape
     current_spacing = configuration_manager.spacing if \
         len(configuration_manager.spacing) == len(properties_dict['shape_after_cropping_and_before_resampling']) else \
