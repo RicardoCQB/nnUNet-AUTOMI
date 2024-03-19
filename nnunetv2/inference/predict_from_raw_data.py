@@ -25,13 +25,13 @@ from export_prediction import export_prediction_from_logits, \
     convert_predicted_logits_to_segmentation_with_correct_shape
 from sliding_window_prediction import compute_gaussian, \
     compute_steps_for_sliding_window
-from nnunetv2.utilities.file_path_utilities import get_output_folder, check_workers_alive_and_busy
-from nnunetv2.utilities.find_class_by_name import recursive_find_python_class
-from nnunetv2.utilities.helpers import empty_cache, dummy_context
-from nnunetv2.utilities.json_export import recursive_fix_for_json_export
-from nnunetv2.utilities.label_handling.label_handling import determine_num_input_channels
-from nnunetv2.utilities.plans_handling.plans_handler import PlansManager, ConfigurationManager
-from nnunetv2.utilities.utils import create_lists_from_splitted_dataset_folder
+from utilities.file_path_utilities import get_output_folder, check_workers_alive_and_busy
+from utilities.find_class_by_name import recursive_find_python_class
+from utilities.helpers import empty_cache, dummy_context
+from utilities.json_export import recursive_fix_for_json_export
+from utilities.label_handling.label_handling import determine_num_input_channels
+from utilities.plans_handling.plans_handler import PlansManager, ConfigurationManager
+from utilities.utils import create_lists_from_splitted_dataset_folder
 from medcam import medcam
 
 
